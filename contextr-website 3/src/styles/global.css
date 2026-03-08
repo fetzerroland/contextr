@@ -564,8 +564,8 @@ section {
 }
 
 .nav__logo {
-  font-family: var(--font-headline);
-  font-size: 1.375rem;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
   font-weight: 400;
   color: var(--color-charcoal);
   text-decoration: none;
@@ -626,8 +626,8 @@ section {
 }
 
 .footer__logo {
-  font-family: var(--font-headline);
-  font-size: 1.125rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
   font-weight: 400;
   color: var(--color-text-secondary);
   text-decoration: none;
