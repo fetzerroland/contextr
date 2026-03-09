@@ -742,4 +742,33 @@ section {
   .hero {
     min-height: 75vh;
   }
+
+  /* Fix 1: Nav — kleiner, damit alles reinpasst */
+  .nav__logo {
+    font-size: 1rem;
+  }
+
+  .nav__links {
+    gap: 0.75rem;
+  }
+
+  .nav__links a {
+    font-size: 0.75rem;
+  }
+
+  /* Fix 2: Schnellcheck-Link Umbruch */
+  .hero__cta {
+    font-size: 0.8125rem;
+  }
+
+  /* Fix 3: Contrast-Grafik vertikal statt horizontal */
+  .contrast {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .contrast__arrow {
+    transform: rotate(90deg);
+    text-align: center;
+  }
 }
