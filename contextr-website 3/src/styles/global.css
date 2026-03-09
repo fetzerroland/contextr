@@ -577,6 +577,16 @@ section {
   color: var(--color-charcoal);
   font-weight: 700;
 }
+.nav__logo-img {
+  height: 1.25rem;
+  width: auto;
+  display: block;
+}
+
+.footer__logo-img {
+  height: 1rem;
+  opacity: 0.6;
+}
 
 .nav__logo:hover {
   color: var(--color-charcoal);
