@@ -701,7 +701,23 @@ section {
   opacity: 0.5;
   animation: gentle-bounce 3s ease-in-out infinite;
 }
+.hero__cta {
+  display: inline-block;
+  margin-top: var(--space-xl);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-deep-teal);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--color-deep-teal);
+  transition: opacity var(--transition-base);
+}
 
+.hero__cta:hover {
+  opacity: 0.7;
+  color: var(--color-deep-teal);
+}
 @keyframes gentle-bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(6px); }
