@@ -757,10 +757,11 @@ section {
   }
 
   /* Fix 2: Schnellcheck-Link Umbruch */
-  .hero__cta {
-    font-size: 0.8125rem;
-  }
-
+.hero__cta {
+  font-size: 0.8125rem;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
   /* Fix 3: Contrast-Grafik vertikal statt horizontal */
   .contrast {
     grid-template-columns: 1fr;
