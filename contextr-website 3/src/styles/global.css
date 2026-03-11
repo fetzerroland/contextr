@@ -790,4 +790,13 @@ section {
     display: block;
   }
 }
+   .desktop-break {
+  display: inline;
+}
+
+@media (min-width: 769px) {
+  .desktop-break {
+    display: block;
+  }
+}
 }
