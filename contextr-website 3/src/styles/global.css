@@ -772,4 +772,13 @@ section {
     transform: rotate(90deg);
     text-align: center;
   }
+   .br-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .br-mobile {
+    display: inline;
+  }
+}
 }
