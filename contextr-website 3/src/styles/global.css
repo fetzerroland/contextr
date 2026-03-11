@@ -781,4 +781,13 @@ section {
     display: inline;
   }
 }
+   .mobile-break {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .mobile-break {
+    display: block;
+  }
+}
 }
