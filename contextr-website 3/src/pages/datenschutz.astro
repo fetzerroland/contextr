@@ -47,8 +47,11 @@ import Base from '../layouts/Base.astro';
 
         <h4 style="margin-top: var(--space-md);">AI-Readiness Schnellcheck</h4>
         <p>
-          Der Schnellcheck unter contextr.lovable.app wird über Lovable (Supabase, EU-Region) bereitgestellt.
-          Bei Nutzung des Schnellchecks gelten die dort angegebenen Datenschutzhinweise.
+          Der Schnellcheck auf der Seite <a href="/schnellcheck">/schnellcheck</a> wird über Lovable (Supabase, EU-Region)
+          bereitgestellt und als eingebettetes Element (iFrame) geladen. Beim Aufrufen der Schnellcheck-Seite wird
+          automatisch eine Verbindung zu contextr.lovable.app hergestellt — dabei werden technische Daten
+          (IP-Adresse, Browser-Typ) an den Dienst übermittelt. Die Eingaben im Schnellcheck werden ausschließlich
+          zur Ergebnisberechnung verwendet und nicht dauerhaft gespeichert.
         </p>
       </div>
 
