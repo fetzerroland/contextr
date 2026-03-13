@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="AI-Readiness Schnellcheck — contextr." description="Finde in 3 Minuten heraus, wie gut deine Organisation auf den Einsatz von KI vorbereitet ist. 10 Fragen, sofortige Auswertung, konkrete Einordnung.">
+  <section style="padding-top: 8rem; padding-bottom: var(--space-lg);">
+    <div class="container container--narrow" style="text-align: center;">
+      <h1 class="reveal">AI-Readiness Schnellcheck</h1>
+      <p class="reveal" style="margin-top: var(--space-md); color: var(--color-text-secondary); font-size: 1.125rem; line-height: 1.7;">
+        Finde in 3 Minuten heraus, wie gut deine Organisation auf den Einsatz von KI vorbereitet ist. 10 Fragen, sofortige Auswertung, konkrete Einordnung.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-bottom: var(--space-section);">
+    <div class="container">
+      <div class="schnellcheck-embed reveal">
+        <iframe
+          src="https://contextr.lovable.app"
+          width="100%"
+          style="border: none; min-height: 800px;"
+          title="AI-Readiness Schnellcheck"
+          loading="lazy"
+          allow="clipboard-write"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-bottom: var(--space-xl);">
+    <div class="container container--narrow" style="text-align: center;">
+      <p>
+        <a href="/">← Zurück zur Startseite</a>
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .schnellcheck-embed {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+      background: #fff;
+    }
+
+    .schnellcheck-embed iframe {
+      display: block;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .schnellcheck-embed iframe {
+        min-height: 600px;
+      }
+    }
+  </style>
+</Base>
