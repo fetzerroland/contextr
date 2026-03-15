@@ -772,7 +772,10 @@ section {
     transform: rotate(90deg);
     text-align: center;
   }
-   .br-mobile {
+}
+
+/* --- Responsive line breaks --- */
+.br-mobile {
   display: none;
 }
 
@@ -781,7 +784,8 @@ section {
     display: inline;
   }
 }
-   .mobile-break {
+
+.mobile-break {
   display: inline;
 }
 
@@ -790,7 +794,8 @@ section {
     display: block;
   }
 }
-   .desktop-break {
+
+.desktop-break {
   display: inline;
 }
 
@@ -798,5 +803,4 @@ section {
   .desktop-break {
     display: block;
   }
-}
 }
