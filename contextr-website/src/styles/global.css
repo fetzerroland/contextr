@@ -439,7 +439,7 @@ section {
 .about-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-lg);
+  gap: 0.5rem;
   max-width: var(--max-width-text);
 }
 
