@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Ich mache Organisationen KI-lesbar. Strukturierter Kontext für bessere KI-Ergebnisse. Für Teams von 1–20 Personen im DACH-Raum." } = Astro.props;
+const { title, description = "Deine KI braucht Einarbeitung. Contextr erfasst euer Organisationswissen und baut KI-Arbeitssysteme — Custom Agents, Workflows, Automationen. Für Teams im DACH-Raum." } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -21,6 +21,15 @@ const { title, description = "Ich mache Organisationen KI-lesbar. Strukturierter
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://contextr.de" />
   <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://contextr.de/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://contextr.de/og-image.png" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
