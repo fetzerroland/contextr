@@ -734,6 +734,14 @@ section {
   color: var(--color-text-secondary);
   line-height: 1.5;
 }
+
+.hero__result-closer {
+  font-family: var(--font-headline);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-top: var(--space-sm);
+}
 @keyframes gentle-bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(6px); }
