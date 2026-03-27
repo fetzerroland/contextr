@@ -371,6 +371,70 @@ section {
   margin-bottom: 0.5rem;
 }
 
+/* --- Approach Grid (Arbeitsweise) --- */
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+@media (max-width: 700px) {
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.approach-block {
+  padding: var(--space-lg) 0;
+}
+
+.approach-block__number {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-deep-teal);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-deep-teal);
+  border-radius: 50%;
+  margin-bottom: var(--space-sm);
+}
+
+.approach-block__title {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.approach-block__subtitle {
+  font-style: italic;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.approach-block__text {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.approach-block__result {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
 /* --- Evidence Grid --- */
 .evidence-grid {
   display: grid;
