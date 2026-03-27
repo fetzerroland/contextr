@@ -559,6 +559,11 @@ section {
   }
 }
 
+/* --- Beweis Section --- */
+#beweis {
+  border-top: 1px solid var(--color-border);
+}
+
 /* --- Evidence Grid --- */
 .evidence-grid {
   display: grid;
