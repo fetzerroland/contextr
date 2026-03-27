@@ -387,6 +387,18 @@ section {
 
 .approach-block {
   padding: var(--space-lg) 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.approach-block__result {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
 }
 
 .approach-block__number {
@@ -425,16 +437,6 @@ section {
   margin-bottom: 0.5rem;
 }
 
-.approach-block__result {
-  font-family: var(--font-headline);
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--color-charcoal);
-  margin-top: var(--space-sm);
-  padding-top: var(--space-sm);
-  border-top: 1px solid var(--color-border);
-}
-
 /* --- Mini Timeline --- */
 .timeline {
   margin-top: var(--space-2xl);
@@ -445,32 +447,63 @@ section {
 
 .timeline__track {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  max-width: 640px;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 680px;
   margin: 0 auto;
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* Continuous connecting line behind markers */
+.timeline__track::before {
+  content: '';
+  position: absolute;
+  top: 1.125rem;
+  left: calc(1rem + 1.125rem);
+  right: calc(1rem + 1.125rem);
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--color-border) 0%,
+    var(--color-deep-teal) 40%,
+    var(--color-deep-teal) 100%
+  );
+  z-index: 0;
 }
 
 .timeline__step {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  flex: 1;
 }
 
-.timeline__dot {
-  width: 12px;
-  height: 12px;
+.timeline__marker {
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
-  background-color: var(--color-deep-teal);
-  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: var(--color-deep-teal);
+  background-color: var(--color-cream-light);
+  border: 2px solid var(--color-border);
+  margin-bottom: 0.625rem;
+  transition: all 0.3s ease;
 }
 
-.timeline__dot--final {
-  width: 16px;
-  height: 16px;
-  box-shadow: 0 0 0 3px rgba(42, 92, 90, 0.2);
+.timeline__marker--final {
+  background-color: var(--color-deep-teal);
+  border-color: var(--color-deep-teal);
+  color: var(--color-cream-light);
+  font-size: 0.875rem;
+  box-shadow: 0 0 0 4px rgba(42, 92, 90, 0.12);
 }
 
 .timeline__label {
@@ -479,19 +512,17 @@ section {
   font-weight: 600;
   color: var(--color-charcoal);
   white-space: nowrap;
+  margin-bottom: 0.125rem;
 }
 
-.timeline__line {
-  flex: 1;
-  height: 2px;
-  background-color: var(--color-deep-teal);
-  min-width: 2rem;
-  margin: 0 0.25rem;
-  margin-bottom: calc(0.5rem + 0.8125rem + 0.25rem);
+.timeline__sub {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
 }
 
 .timeline__caption {
-  margin-top: var(--space-md);
+  margin-top: var(--space-lg);
   font-style: italic;
   color: var(--color-text-secondary);
   font-size: 0.9375rem;
@@ -499,15 +530,31 @@ section {
 
 @media (max-width: 480px) {
   .timeline__track {
-    gap: 0;
+    padding: 0;
+  }
+
+  .timeline__marker {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.6875rem;
+  }
+
+  .timeline__marker--final {
+    font-size: 0.75rem;
+  }
+
+  .timeline__track::before {
+    top: 0.875rem;
+    left: calc(0.875rem);
+    right: calc(0.875rem);
   }
 
   .timeline__label {
     font-size: 0.6875rem;
   }
 
-  .timeline__line {
-    min-width: 1rem;
+  .timeline__sub {
+    font-size: 0.625rem;
   }
 }
 
