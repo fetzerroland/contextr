@@ -439,10 +439,11 @@ section {
 
 /* --- Mini Timeline --- */
 .timeline {
-  margin-top: var(--space-2xl);
-  padding-top: var(--space-xl);
-  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-lg);
   text-align: center;
+  background-color: var(--color-cream);
+  border-radius: 6px;
+  padding: var(--space-lg) var(--space-md);
 }
 
 .timeline__track {
@@ -492,7 +493,7 @@ section {
   font-weight: 600;
   font-size: 0.8125rem;
   color: var(--color-deep-teal);
-  background-color: var(--color-cream-light);
+  background-color: var(--color-cream);
   border: 2px solid var(--color-border);
   margin-bottom: 0.625rem;
   transition: all 0.3s ease;
