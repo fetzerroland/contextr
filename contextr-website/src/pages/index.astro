@@ -187,10 +187,9 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- S5: Beweis -->
-  <section id="beweis">
+  <!-- S5a: Externe Evidenz -->
+  <section class="section--cream" id="beweis">
     <div class="container">
-      <!-- Teil A: Externe Evidenz -->
       <h2 class="reveal">Das Problem ist belegt. Die Lösung auch.</h2>
 
       <div class="evidence-grid reveal">
@@ -215,40 +214,42 @@ import Base from '../layouts/Base.astro';
           <p class="evidence-item__source">OECD, 2025</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Teil B: Eigener PoC -->
-      <div class="reveal" style="margin-top: 128px; padding-top: var(--space-xl); padding-bottom: var(--space-xl); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
-        <h3 style="margin-bottom: var(--space-md);">Eigener Test: Wie groß ist der Unterschied?</h3>
-        <p style="max-width: var(--max-width-text);">
-          Um die These zu prüfen, habe ich einen dreistufigen Benchmark am eigenen Unternehmen durchgeführt:
-          gleiche Prompts, gleiche KI — einmal ohne Kontext, einmal mit strukturiertem Organisationskontext.
-          Das Ergebnis: durchschnittlich <strong class="text-teal">+140% Qualitätssteigerung</strong> —
-          mit steigendem Effekt bei komplexeren Aufgaben.
-        </p>
+  <!-- S5b: Eigener Test -->
+  <section id="eigener-test">
+    <div class="container container--narrow">
+      <h3 class="reveal" style="margin-bottom: var(--space-md);">Eigener Test: Wie groß ist der Unterschied?</h3>
+      <p class="reveal" style="max-width: var(--max-width-text);">
+        Um die These zu prüfen, habe ich einen dreistufigen Benchmark am eigenen Unternehmen durchgeführt:
+        gleiche Prompts, gleiche KI — einmal ohne Kontext, einmal mit strukturiertem Organisationskontext.
+        Das Ergebnis: durchschnittlich <strong class="text-teal">+140% Qualitätssteigerung</strong> —
+        mit steigendem Effekt bei komplexeren Aufgaben.
+      </p>
 
-        <div class="scaling-curve">
-          <div class="scaling-step">
-            <div class="scaling-step__value">+110%</div>
-            <div class="scaling-step__label">Operative Aufgaben</div>
-          </div>
-          <div class="scaling-step">
-            <div class="scaling-step__value">+124%</div>
-            <div class="scaling-step__label">Strategische Aufgaben</div>
-          </div>
-          <div class="scaling-step">
-            <div class="scaling-step__value">+200%</div>
-            <div class="scaling-step__label">Systemische Aufgaben</div>
-          </div>
+      <div class="scaling-curve reveal">
+        <div class="scaling-step">
+          <div class="scaling-step__value">+110%</div>
+          <div class="scaling-step__label">Operative Aufgaben</div>
         </div>
-
-        <p class="reveal" style="margin-top: var(--space-lg); max-width: var(--max-width-text);">
-          Einfache Aufgaben kann KI auch ohne Kontext erledigen. <br>Bei den wichtigen versagt sie.
-        </p>
-
-        <p class="text-small text-secondary" style="margin-top: var(--space-md); max-width: var(--max-width-text);">
-          Interner Proof of Concept, N=1. Externe Validierung durch Pilotprojekte läuft.
-        </p>
+        <div class="scaling-step">
+          <div class="scaling-step__value">+124%</div>
+          <div class="scaling-step__label">Strategische Aufgaben</div>
+        </div>
+        <div class="scaling-step">
+          <div class="scaling-step__value">+200%</div>
+          <div class="scaling-step__label">Systemische Aufgaben</div>
+        </div>
       </div>
+
+      <p class="reveal" style="margin-top: var(--space-lg); max-width: var(--max-width-text);">
+        Einfache Aufgaben kann KI auch ohne Kontext erledigen. <br>Bei den wichtigen versagt sie.
+      </p>
+
+      <p class="reveal text-small text-secondary" style="margin-top: var(--space-md); max-width: var(--max-width-text);">
+        Interner Proof of Concept, N=1. Externe Validierung durch Pilotprojekte läuft.
+      </p>
     </div>
   </section>
 
