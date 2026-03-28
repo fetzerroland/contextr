@@ -460,9 +460,9 @@ section {
 .timeline__track::before {
   content: '';
   position: absolute;
-  top: 1.125rem;
-  left: calc(1rem + 1.125rem);
-  right: calc(1rem + 1.125rem);
+  top: 1rem;
+  left: calc(1rem + 1rem);
+  right: calc(1rem + 1rem);
   height: 2px;
   background: linear-gradient(
     to right,
@@ -482,29 +482,47 @@ section {
   flex: 1;
 }
 
-.timeline__marker {
-  width: 2.25rem;
-  height: 2.25rem;
+/* Progressive fill dots — --fill: 0..1 controls visual progress */
+.timeline__dot {
+  --fill: 0;
+  --teal: var(--color-deep-teal);
+  --bg: var(--color-cream-light);
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-headline);
-  font-weight: 600;
-  font-size: 0.8125rem;
-  color: var(--color-deep-teal);
-  background-color: var(--color-cream);
-  border: 2px solid var(--color-border);
   margin-bottom: 0.625rem;
+  position: relative;
+  background: conic-gradient(
+    var(--teal) 0%,
+    var(--teal) calc(var(--fill) * 100%),
+    transparent calc(var(--fill) * 100%),
+    transparent 100%
+  );
   transition: all 0.3s ease;
 }
 
-.timeline__marker--final {
-  background-color: var(--color-deep-teal);
-  border-color: var(--color-deep-teal);
-  color: var(--color-cream-light);
-  font-size: 0.875rem;
+/* Inner circle creates the "ring filling" look */
+.timeline__dot::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.timeline__dot--complete {
+  background: var(--teal);
   box-shadow: 0 0 0 4px rgba(42, 92, 90, 0.12);
+}
+
+.timeline__dot--complete::after {
+  /* Checkmark via background SVG */
+  inset: 0;
+  background: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FAFAF8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 12 10 16 18 8'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .timeline__label {
@@ -531,31 +549,31 @@ section {
 
 @media (max-width: 480px) {
   .timeline__track {
-    padding: 0;
+    padding: 0 0.25rem;
   }
 
-  .timeline__marker {
-    width: 1.75rem;
-    height: 1.75rem;
-    font-size: 0.6875rem;
+  .timeline__dot {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
-  .timeline__marker--final {
-    font-size: 0.75rem;
+  .timeline__dot::after {
+    inset: 2px;
   }
 
   .timeline__track::before {
-    top: 0.875rem;
-    left: calc(0.875rem);
-    right: calc(0.875rem);
+    top: 0.625rem;
+    left: calc(0.625rem + 0.25rem);
+    right: calc(0.625rem + 0.25rem);
   }
 
   .timeline__label {
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
+    letter-spacing: -0.01em;
   }
 
   .timeline__sub {
-    font-size: 0.625rem;
+    font-size: 0.5625rem;
   }
 }
 
