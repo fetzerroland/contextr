@@ -1002,6 +1002,12 @@ section {
   }
 }
 
+/* --- Wortmarke --- */
+.wortmarke {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
 /* --- Responsive line breaks --- */
 .br-mobile {
   display: none;
