@@ -217,7 +217,7 @@ section {
   );
   background-size: 300% 300%;
   background-repeat: no-repeat; /* verhindert gekachelte Doppeldurchläufe */
-  animation: btn-shimmer 8s linear 5s infinite;
+  animation: btn-shimmer 7.1s linear 4.6s infinite;
   pointer-events: none;
 }
 
