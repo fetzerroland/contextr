@@ -201,6 +201,32 @@ section {
   background-color: var(--color-deep-teal);
   color: var(--color-cream-light);
   border-color: var(--color-deep-teal);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.09),
+    transparent
+  );
+  animation: btn-shimmer 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes btn-shimmer {
+  0%, 55%, 100% { left: -80%; opacity: 0; }
+  5%            { opacity: 1; }
+  45%           { left: 140%; opacity: 1; }
+  50%           { opacity: 0; }
 }
 
 .btn--primary:hover {
