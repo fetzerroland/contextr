@@ -216,19 +216,18 @@ section {
     transparent 70%
   );
   background-size: 300% 300%;
+  background-repeat: no-repeat; /* verhindert gekachelte Doppeldurchläufe */
   animation: btn-shimmer 8s linear infinite;
   pointer-events: none;
 }
 
 @keyframes btn-shimmer {
-  /* linear timing = konstante Geschwindigkeit, kein Ease-in-out-Doppeleffekt */
-  /* 200% 200% = Lichtpunkt links oben außerhalb; -100% -100% = rechts unten außerhalb */
-  0%   { background-position: 200% 200%; opacity: 0; }
-  4%   { background-position: 200% 200%; opacity: 1; }
-  38%  { background-position: -100% -100%; opacity: 1; }
-  42%  { background-position: -100% -100%; opacity: 0; }
-  43%  { background-position: 200% 200%; opacity: 0; } /* unsichtbarer Reset */
-  100% { background-position: 200% 200%; opacity: 0; }
+  /* 200% 200% = Gradient-Kachel links oben außerhalb; -100% -100% = rechts unten außerhalb */
+  /* overflow:hidden clippt den Eintritt/Austritt — kein opacity-Fade nötig */
+  0%     { background-position: 200% 200%; }
+  35%    { background-position: -100% -100%; }
+  35.1%  { background-position: 200% 200%; } /* unsichtbarer Reset */
+  100%   { background-position: 200% 200%; }
 }
 
 .btn--primary:hover {
