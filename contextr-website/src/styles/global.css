@@ -924,7 +924,7 @@ section {
 }
 
 .hero__result-checks {
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
 }
 
 .hero__check {
