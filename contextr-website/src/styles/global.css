@@ -1033,6 +1033,17 @@ section {
     opacity: 0.75;
   }
 
+  /* Hero: contextr-Wortmarke minimal kleiner */
+  .hero__wortmarke {
+    font-size: 1.05rem;
+  }
+
+  /* Hero: Tagline einzeilig */
+  .hero__result-sub {
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+
   /* Fix 3: Contrast-Grafik */
   .contrast {
     gap: var(--space-xs);
