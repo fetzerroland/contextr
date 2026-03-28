@@ -985,6 +985,7 @@ section {
 
   .nav__links a {
     font-size: 0.75rem;
+    line-height: 1.2;
   }
 
   /* Fix 3: Contrast-Grafik */
