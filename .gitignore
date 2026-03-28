@@ -1,0 +1,12 @@
+node_modules/
+contextr-website/node_modules/
+contextr-website/.astro/
+.astro/
+dist/
+contextr-website/dist/
+.env
+.env.*
+*.log
+.DS_Store
+.claude/
+contextr-website/.claude/
