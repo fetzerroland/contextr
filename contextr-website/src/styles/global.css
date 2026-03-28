@@ -1130,6 +1130,9 @@ section {
 }
 
 @media (max-width: 768px) {
+  .mockup-showcase {
+    margin-top: var(--space-lg);
+  }
   .mockup-showcase__frame {
     border-radius: 8px;
     box-shadow:
