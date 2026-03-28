@@ -1007,6 +1007,16 @@ section {
   display: none;
 }
 
+.br-desktop {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .br-desktop {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .br-mobile {
     display: inline;
