@@ -817,6 +817,9 @@ section {
   .nav__links a {
     font-size: 0.8125rem;
   }
+  .hero__scroll {
+    margin-top: var(--space-lg);
+  }
 }
 
 /* --- Footer --- */
