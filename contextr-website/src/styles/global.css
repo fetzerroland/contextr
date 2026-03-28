@@ -216,16 +216,16 @@ section {
     transparent 70%
   );
   background-size: 300% 300%;
-  background-position: -100% -100%;
-  animation: btn-shimmer 5s ease-in-out infinite;
+  animation: btn-shimmer 7s ease-in-out infinite;
   pointer-events: none;
 }
 
 @keyframes btn-shimmer {
-  0%, 55%, 100% { background-position: -100% -100%; opacity: 0; }
-  5%            { background-position: -100% -100%; opacity: 1; }
-  45%           { background-position: 200% 200%; opacity: 1; }
-  50%           { background-position: 200% 200%; opacity: 0; }
+  /* 200% 200% = Lichtpunkt links oben außerhalb; -100% -100% = rechts unten außerhalb */
+  0%, 55%, 100% { background-position: 200% 200%; opacity: 0; }
+  5%            { background-position: 200% 200%; opacity: 1; }
+  45%           { background-position: -100% -100%; opacity: 1; }
+  50%           { background-position: -100% -100%; opacity: 0; }
 }
 
 .btn--primary:hover {
