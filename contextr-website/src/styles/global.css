@@ -817,9 +817,6 @@ section {
   .nav__links a {
     font-size: 0.8125rem;
   }
-  .hero__scroll {
-    margin-top: var(--space-lg);
-  }
 }
 
 /* --- Footer --- */
@@ -974,7 +971,8 @@ section {
   }
 
   .hero {
-    min-height: 75vh;
+    min-height: auto;
+    padding-bottom: var(--space-sm);
   }
 
   /* Fix 1: Nav — kleiner, damit alles reinpasst */
@@ -989,6 +987,13 @@ section {
   .nav__links a {
     font-size: 0.75rem;
     line-height: 1.2;
+  }
+
+  /* Scroll-Pfeil: näher am Button, größer und klarer */
+  .hero__scroll {
+    margin-top: var(--space-sm);
+    font-size: 1.125rem;
+    opacity: 0.75;
   }
 
   /* Fix 3: Contrast-Grafik */
