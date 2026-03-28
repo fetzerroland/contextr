@@ -891,12 +891,12 @@ section {
 }
 
 .hero__scroll {
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-lg);
   color: var(--color-text-secondary);
-  font-size: 0.8125rem;
+  font-size: 1.125rem;
   font-family: var(--font-mono);
   letter-spacing: 0.05em;
-  opacity: 0.5;
+  opacity: 0.75;
   animation: gentle-bounce 3s ease-in-out infinite;
 }
 
