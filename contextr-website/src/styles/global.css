@@ -905,15 +905,17 @@ section {
   font-size: clamp(3rem, 7vw, 5rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xs);
   text-wrap: balance;
 }
 
-.hero__sub {
-  font-size: clamp(1.125rem, 2vw, 1.375rem);
+.hero__subline {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
   color: var(--color-text-secondary);
+  font-weight: 500;
   max-width: 600px;
-  line-height: 1.55;
+  line-height: 1.45;
+  margin-bottom: var(--space-lg);
   text-wrap: pretty;
 }
 
@@ -973,12 +975,6 @@ section {
   margin-right: 0.125rem;
 }
 
-.hero__result-sub {
-  font-size: 0.9375rem;
-  color: var(--color-text-secondary);
-  line-height: 1.5;
-}
-
 .hero__result-closer {
   font-family: var(--font-headline);
   font-size: 1rem;
@@ -1036,12 +1032,6 @@ section {
   /* Hero: contextr-Wortmarke minimal kleiner */
   .hero__wortmarke {
     font-size: 1.05rem;
-  }
-
-  /* Hero: Tagline einzeilig */
-  .hero__result-sub {
-    font-size: 0.8125rem;
-    white-space: nowrap;
   }
 
   /* Fix 3: Contrast-Grafik */
@@ -1130,9 +1120,6 @@ section {
 }
 
 @media (max-width: 768px) {
-  .mockup-showcase {
-    margin-top: var(--space-lg);
-  }
   .mockup-showcase__frame {
     border-radius: 8px;
     box-shadow:
