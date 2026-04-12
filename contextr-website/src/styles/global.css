@@ -935,6 +935,7 @@ section {
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin-bottom: var(--space-xs);
+  margin-left: -0.04em;
   text-wrap: balance;
 }
 
