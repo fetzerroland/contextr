@@ -945,6 +945,7 @@ section {
   font-weight: 500;
   max-width: 600px;
   line-height: 1.45;
+  margin-left: 0.01em;
   margin-bottom: var(--space-lg);
   text-wrap: pretty;
 }
