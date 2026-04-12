@@ -324,6 +324,35 @@ section {
   margin-bottom: var(--space-md);
 }
 
+.package-card__result-intro {
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-md);
+  text-wrap: pretty;
+}
+
+.package-card__details {
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.package-card__details summary {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: var(--space-xs) 0;
+  user-select: none;
+}
+
+.package-card__details summary:hover {
+  color: var(--color-deep-teal);
+}
+
+.package-card__details[open] summary {
+  margin-bottom: var(--space-sm);
+}
+
 .package-card__list {
   list-style: none;
   margin-bottom: var(--space-lg);
