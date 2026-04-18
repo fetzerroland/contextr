@@ -1143,6 +1143,10 @@ section {
   margin-bottom: var(--space-xl);
 }
 
+.einsatz__intro h2 .wortmarke {
+  font-weight: 500;
+}
+
 .einsatz__eyebrow {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
