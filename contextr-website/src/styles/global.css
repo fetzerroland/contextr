@@ -1138,6 +1138,10 @@ section {
 }
 
 /* --- Einsatzgebiete Section --- */
+#einsatzgebiete {
+  padding-bottom: var(--space-xl);
+}
+
 .einsatz__intro {
   max-width: 760px;
   margin-bottom: var(--space-xl);
