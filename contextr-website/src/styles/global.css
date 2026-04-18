@@ -1139,7 +1139,7 @@ section {
 
 /* --- Einsatzgebiete Section --- */
 #einsatzgebiete {
-  padding-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
 }
 
 .einsatz__intro {
