@@ -50,6 +50,7 @@ const { title, description = "Deine KI braucht Einarbeitung. contextr erfasst eu
     <div class="nav__inner">
       <a href="/" class="nav__logo" aria-label="contextr. — Startseite"><img src="/logo.svg" alt="contextr." class="nav__logo-img" /></a>
       <ul class="nav__links">
+        <li class="nav__links-einsatz"><a href="/#einsatzgebiete">Einsatz&shy;gebiete</a></li>
         <li><a href="/#leistung">Leistung</a></li>
         <li><a href="/#arbeitsweise">Arbeits&shy;weise</a></li>
         <li><a href="/#ueber-mich">Über mich</a></li>
@@ -114,6 +115,50 @@ const { title, description = "Deine KI braucht Einarbeitung. contextr erfasst eu
         }
       });
     });
+
+    // Einsatzgebiete: Modal interaction
+    const modalRoot = document.getElementById('einsatz-modals');
+    if (modalRoot) {
+      const cards = document.querySelectorAll('.einsatz-card[data-case-id]');
+      const modals = modalRoot.querySelectorAll('.einsatz-modal[data-case-modal]');
+      let lastTrigger = null;
+
+      const openModal = (caseId, trigger) => {
+        const modal = modalRoot.querySelector('.einsatz-modal[data-case-modal="' + caseId + '"]');
+        if (!modal) return;
+        lastTrigger = trigger;
+        modalRoot.hidden = false;
+        modal.hidden = false;
+        document.body.classList.add('modal-open');
+        const closeBtn = modal.querySelector('.einsatz-modal__close');
+        closeBtn?.focus();
+      };
+
+      const closeAllModals = () => {
+        modals.forEach(m => { m.hidden = true; });
+        modalRoot.hidden = true;
+        document.body.classList.remove('modal-open');
+        lastTrigger?.focus();
+        lastTrigger = null;
+      };
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          const id = card.dataset.caseId;
+          if (id) openModal(id, card);
+        });
+      });
+
+      modalRoot.querySelectorAll('[data-modal-close]').forEach(el => {
+        el.addEventListener('click', closeAllModals);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modalRoot.hidden) {
+          closeAllModals();
+        }
+      });
+    }
   </script>
 </body>
 </html>

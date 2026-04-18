@@ -92,6 +92,472 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
+  <!-- S4a: Einsatzgebiete -->
+  <section id="einsatzgebiete">
+    <div class="container">
+      <div class="einsatz__intro reveal">
+        <div class="einsatz__eyebrow">// Typische Einsatzgebiete</div>
+        <h2>Wo Contextr bei kleinen und mittleren Teams ansetzt.</h2>
+        <p class="einsatz__lead">Jedes Team hat eigene Abläufe, eigene Entscheidungslogiken, eigenes Wissen in Köpfen. Die folgenden zwölf Szenarien zeigen, wie <span class="wortmarke">contextr</span> das in ein AI-Arbeitssystem übersetzt — gegliedert nach Branche, Teamgröße und Kernproblem.</p>
+        <p class="einsatz__sub">Jede Karte öffnet ein ausführliches Beispiel: Ausgangslage, Aufgabenstellung, <span class="wortmarke">contextr</span>-Einsatz, Ergebnis.</p>
+      </div>
+
+      <div class="einsatz-grid reveal">
+        {[
+          { nr: "01", paket: "System", titel: "Kundenstimme halten — bei jedem Text, jeder Person", segment: "PR- / Kreativ-Boutique", groesse: "5–15 Mitarbeiter", teaser: "Pro Kunde eigene Tonalität, eigene Tabuthemen, eigene Geschichte. Neue Texter schreiben vom ersten Tag an im richtigen Ton." },
+          { nr: "02", paket: "System", titel: "Projekt-Playbooks mit integrierten Learnings", segment: "Event-Agentur", groesse: "4–15 Mitarbeiter", teaser: "70% jedes Events sind wiederverwendbar. Playbooks strukturieren Wiederholung, sammeln Learnings — und befähigen Juniors." },
+          { nr: "03", paket: "System", titel: "Mandats-Onboarding ohne Zwei-Wochen-Einlauf", segment: "Steuerkanzlei", groesse: "5–15 Mitarbeiter", teaser: "Neue Mandate aufnehmen, ohne dass Steuerfachangestellte dreimal nachfragen müssen." },
+          { nr: "04", paket: "Analyse", titel: "Projektgedächtnis über Personenwechsel hinweg", segment: "Architekturbüro", groesse: "4–12 Mitarbeiter", teaser: "Was mit der Bauherrin besprochen wurde, warum die Fassade so kam, welche Nachbarvereinbarung offen ist — nicht mehr nur im Kopf." },
+          { nr: "05", paket: "Pro", titel: "Mandantenverständnis und Matching-Logik übertragbar machen", segment: "Headhunting-Boutique", groesse: "3–10 Mitarbeiter", teaser: "Research-Mitarbeiter brauchen sonst zwei Jahre bis zum Senior-Niveau. Mit dokumentiertem Mandantenkontext schneller — ohne Qualitätseinbuße." },
+          { nr: "06", paket: "System", titel: "Objektgedächtnis und Anfragen-Triage", segment: "Hausverwaltung", groesse: "5–20 Mitarbeiter", teaser: "140 Objekte, jedes mit eigener Geschichte. Sachbearbeiterinnen greifen auf kontextualisiertes Wissen zu — nicht auf eine leere Akte." },
+          { nr: "07", paket: "System", titel: "Fall-Eröffnung mit konsistenter Vorab-Prüfung", segment: "Anwaltskanzlei", groesse: "3–10 Mitarbeiter", teaser: "Erstkontakt, Konfliktprüfung, Vollmacht — strukturiert ablaufen lassen, auch wenn der Anwalt nicht da ist." },
+          { nr: "08", paket: "System", titel: "Halter-Kontext jenseits der Patientenakte", segment: "Tierarztpraxis", groesse: "4–10 Mitarbeiter", teaser: "Die medizinische Akte hat das System. Der Halter-Kontext — Compliance, Lebenssituation, Kommunikationsvorlieben — bisher nicht." },
+          { nr: "09", paket: "Analyse", titel: "Wissenstransfer bei Personal- und Ehrenamtswechsel", segment: "Gemeinnützige Organisation", groesse: "3–10 Hauptamtliche", teaser: "Stakeholder-Wissen, Entscheidungshistorie und Einsatzkoordination als Organisationsgedächtnis — unabhängig von einzelnen Personen." },
+          { nr: "10", paket: "Analyse", titel: "Kalkulationslogik für die nächste Generation", segment: "Handwerksbetrieb", groesse: "5–15 Mitarbeiter", teaser: "Angebote dauern nicht mehr den halben Abend. Und die Erfahrungsregeln des Chefs werden übergabefähig — ohne Verlust an handwerklichem Gefühl." },
+          { nr: "11", paket: "Pro", titel: "Recherche-Standardisierung und Fristen-Kontrollsystem", segment: "Patentanwaltskanzlei", groesse: "3–8 Mitarbeiter", teaser: "Patentrecherchen nach gleichem Maßstab, Fristenkontrolle doppelt abgesichert — auch bei Urlaubs- und Krankheitsvertretung." },
+          { nr: "12", paket: "System", titel: "Gutachten-Bausteinbibliothek mit Qualitäts-Learnings", segment: "Sachverständigenbüro", groesse: "1–8 Mitarbeiter", teaser: "60% Standardbausteine, 40% Einzelfall. Die Bausteine strukturiert, die Learnings aus abgelehnten Gutachten systematisch eingespeist." }
+        ].map(card => (
+          <button type="button" class="einsatz-card" data-case-id={card.nr} aria-haspopup="dialog">
+            <div class="einsatz-card__tag">{card.nr}<span class="einsatz-card__paket">// {card.paket}</span></div>
+            <h3 class="einsatz-card__title">{card.titel}</h3>
+            <p class="einsatz-card__segment">{card.segment} · {card.groesse}</p>
+            <p class="einsatz-card__teaser">{card.teaser}</p>
+            <div class="einsatz-card__more">
+              <span>Beispiel ansehen</span>
+              <span class="einsatz-card__arrow">→</span>
+            </div>
+          </button>
+        ))}
+      </div>
+
+      <p class="einsatz__footnote">Die Szenarien sind typische Anwendungsfälle aus der Zielgruppe von <span class="wortmarke">contextr</span> — keine Kundenreferenzen. Referenzen werden nach Abschluss der laufenden Pilotprojekte separat veröffentlicht.</p>
+    </div>
+
+    <!-- Modals -->
+    <div class="einsatz-modal-root" id="einsatz-modals" hidden>
+      <div class="einsatz-modal" data-case-modal="01" role="dialog" aria-modal="true" aria-labelledby="case-01-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">01 · PR- / Kreativ-Boutique · <span class="einsatz-modal__paket">Contextr System</span></div>
+          <h3 id="case-01-title" class="einsatz-modal__title">Kundenstimme halten — bei jedem Text, jeder Person</h3>
+          <p class="einsatz-modal__segment">5–15 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Wir betreuen 12 Kunden mit je eigener Tonalität, eigenen Tabuthemen, eigenen Pressekontakten. Wenn eine neue Texterin anfängt, brauche ich vier Wochen, bis sie für Kunde X in dessen Stimme schreiben kann — und selbst dann muss ich alles gegenlesen.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Mehrkundenbetreuung mit stark unterschiedlichen Anforderungen. Tonalität und Kundenhistorie als Tacit Knowledge bei Seniors. Neu-Onboarding dauert Wochen.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext der Agentur plus ein Kunden-Kontext-Profil je Schlüsselkunde.</li>
+              <li>Pro Kundenprofil: Tonalität, Tabuthemen, Positionierung, Schlüsselmedien, Krisenhistorie, Do's und Don'ts.</li>
+              <li>Custom Agent „Textvorschlag für Kunde X" mit ladbarem Kundenprofil als Kontext.</li>
+              <li>Starter-Prompts für Pressemitteilung, LinkedIn-Post im Kundenstil, Krisen-Statement.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Einarbeitungszeit neuer Texter auf Kundenstandard deutlich verkürzt.</p>
+              <p>Tonalitätsabweichungen in Freigabeschleifen messbar reduziert.</p>
+              <p>Kapazität für Neukunden-Akquise steigt, weil bestehende Betreuung weniger Chefzeit bindet.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="02" role="dialog" aria-modal="true" aria-labelledby="case-02-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">02 · Event-Agentur · <span class="einsatz-modal__paket">Contextr System</span></div>
+          <h3 id="case-02-title" class="einsatz-modal__title">Projekt-Playbooks mit integrierten Learnings</h3>
+          <p class="einsatz-modal__segment">4–15 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Jedes Event ist anders, aber 70% der Aufgaben sind dieselben. Trotzdem bauen wir jeden Projektplan neu. Und die Learnings aus der letzten Messe stehen in einer PowerPoint, die niemand mehr öffnet.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Projektpläne werden pro Event neu gebaut. Nachbereitungs-Learnings verschwinden in Einzel-Präsentationen. Junior-Entwicklung gebremst durch Abhängigkeit von Senior-Aufsicht.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext und Event-Typen-Taxonomie: Messe, Produktlaunch, Kongress, Incentive.</li>
+              <li>Pro Event-Typ: Playbook mit Phasen, typischen Pitfalls, Dienstleister-Empfehlungen, Budget-Benchmarks.</li>
+              <li>Learnings-Integration als eigener Kernprozess: nach jedem Event 3–5 Erkenntnisse in die Playbooks zurückspielen.</li>
+              <li>Starter-Prompts für Kick-off-Briefings, Risiko-Reviews und Nachbereitungen.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Projektaufsetzzeit von rund zwei Wochen auf wenige Tage.</p>
+              <p>Learnings werden erstmals systematisch genutzt statt in Präsentations-Gräbern zu verschwinden.</p>
+              <p>Junior-Projektleiter übernehmen Events eigenverantwortlich, die vorher Senior-Aufsicht brauchten.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="03" role="dialog" aria-modal="true" aria-labelledby="case-03-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">03 · Steuerkanzlei · <span class="einsatz-modal__paket">Contextr System</span></div>
+          <h3 id="case-03-title" class="einsatz-modal__title">Mandats-Onboarding ohne Zwei-Wochen-Einlauf</h3>
+          <p class="einsatz-modal__segment">5–15 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Jedes neue Mandat kostet uns zwei Wochen. Die Infos kommen in drei E-Mails, einem Telefonat und manchmal auf einem Zettel. Meine Steuerfachangestellten fragen mich dreimal dasselbe, weil nirgendwo steht, was beim letzten Mandanten dieser Branche der Trick war.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Mandatsaufnahme läuft über verteilte Kanäle. Branchenspezifisches Erfahrungswissen zu Kontierung und DATEV-Sonderfällen steckt im Kopf des Kanzleiinhabers.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext: Mandatsstruktur, typische Branchen, DATEV-Kontierungslogik, übliche Sondersachverhalte pro Branche.</li>
+              <li>Custom Agent „Mandatsaufnahme" mit Ladematrix: je nach Mandantentyp werden andere Sektionen gezogen (Lohn / Bilanz / EÜR / USt-Sonderfälle).</li>
+              <li>Starter-Prompts für Standardsituationen: Neumandant Handwerksbetrieb, Wechsel von Lexware zu DATEV, Nachfolgemandat.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Onboarding-Zeit pro Mandat sinkt von rund zwei Wochen auf etwa eine.</p>
+              <p>Mandatsaufnahme-Checkliste wird erstmals konsistent genutzt — unabhängig davon, wer sie ausführt.</p>
+              <p>Steuerfachangestellte arbeiten ohne Nachfragen an Fällen, die vorher Chefsache waren.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="04" role="dialog" aria-modal="true" aria-labelledby="case-04-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">04 · Architekturbüro · <span class="einsatz-modal__paket">Contextr Analyse</span></div>
+          <h3 id="case-04-title" class="einsatz-modal__title">Projektgedächtnis über Personenwechsel hinweg</h3>
+          <p class="einsatz-modal__segment">4–12 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Jedes Projekt hat seinen eigenen Ordner im Server, aber die wichtigen Infos — was mit der Bauherrin besprochen wurde, warum wir uns für diese Fassade entschieden haben, welche Nachbarschaftsvereinbarung noch offen ist — stehen in meinen Notizen oder in Köpfen. Wenn mein Projektleiter wechselt, weiß der Neue nichts.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Projektwissen verteilt auf Serverordner, Notizen und Köpfe. Bei Personenwechseln dauert Einarbeitung mehrere Tage. Entscheidungsbegründungen sind nicht dokumentiert — relevant bei späteren Gewährleistungsfragen.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext plus ein exemplarisches Projekt-Kontext-Dokument als Template.</li>
+              <li>Sektionsstruktur: Bauherrin und Stakeholder, Entwurfslogik und Entscheidungen, offene Abstimmungen, behördliche Auflagen, Nachbarschaft und Baugrundstück-Besonderheiten.</li>
+              <li>Empfehlung zum KI-Toolstack passend zur bestehenden IT-Landschaft.</li>
+              <li>Starter-Prompts für Projekt-Briefings, Status-Updates an Bauherrschaft und Entscheidungsbegründungen für Behörden.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Projektübergaben reduzieren sich von rund zwei Arbeitstagen auf wenige Stunden.</p>
+              <p>Entscheidungsbegründungen sind nachvollziehbar — relevant bei Gewährleistungsfragen.</p>
+              <p>Bauherr-Kommunikation bleibt konsistent, auch wenn der Projektleiter wechselt.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="05" role="dialog" aria-modal="true" aria-labelledby="case-05-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">05 · Headhunting-Boutique · <span class="einsatz-modal__paket">Contextr Pro</span></div>
+          <h3 id="case-05-title" class="einsatz-modal__title">Mandantenverständnis und Matching-Logik übertragbar machen</h3>
+          <p class="einsatz-modal__segment">3–10 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Unser Geschäft lebt von Kandidaten-Wissen und Mandantenverständnis. Beides steckt in Kontaktnotizen, LinkedIn-DMs, Gesprächsprotokollen — und in meinem Kopf. Wenn ich einen Research-Mitarbeiter aufbaue, dauert es zwei Jahre, bis er mein Mandantenverständnis hat.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Mandantenverständnis und Matching-Heuristik als Tacit Knowledge bei wenigen Seniors. Research-Onboarding dauert Jahre. Hohes Schlüsselpersonen-Risiko.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Vollständiger Organisationskontext und Kernprozesse: Mandatsaufnahme, Research, Ansprache, Interview, Abschluss.</li>
+              <li>Mandantenprofile als eigener Kontext-Layer: Unternehmenskultur, tatsächliche vs. offizielle Anforderungen, Tabuprofile, Geschichte gescheiterter Einsätze.</li>
+              <li>Matching-Logik expliziert: welche Signale aus Kandidatenprofilen wiegen wie schwer.</li>
+              <li>Starter-Prompts für Kandidat-Briefings, Longlist-Begründungen und Absage-Formulierungen in Mandanten-Tonalität.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Research-Mitarbeiter erreichen Produktivität deutlich früher.</p>
+              <p>Mandantenverständnis wird auditierbar — wichtig bei Research-Übergaben oder Partnerwechsel.</p>
+              <p>Präzisere Longlisten, weil Tacit-Wissen der Seniors im System liegt.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="06" role="dialog" aria-modal="true" aria-labelledby="case-06-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">06 · Hausverwaltung · <span class="einsatz-modal__paket">Contextr System</span></div>
+          <h3 id="case-06-title" class="einsatz-modal__title">Objektgedächtnis und Anfragen-Triage</h3>
+          <p class="einsatz-modal__segment">5–20 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Wir verwalten 140 Objekte. Jedes hat seine eigene Geschichte — welcher Handwerker arbeitet gut, wo sind die Wasseruhren, welcher Eigentümer ist heikel. Telefonanfragen fressen uns auf, weil nirgendwo steht, was beim letzten Mal gemacht wurde.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Hohe Anfragen-Last, verteiltes Objektwissen, personenabhängige Bearbeitung. Vertretungssituationen (Urlaub, Krankheit) führen zu Qualitätsabfällen.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext plus Objekt-Kontext-Schema als befüllbares Template pro Objekt.</li>
+              <li>Anfragen-Kernprozess: Eingang, Triage, Zuordnung, Abarbeitung.</li>
+              <li>Custom Agent „Anfragen-Vorklassifizierung" liest Kurzbeschreibung und ordnet Objekt und Dringlichkeit zu.</li>
+              <li>Handwerker-Präferenzen und Historie als ladbarer Kontext.</li>
+              <li>Starter-Prompts für typische Eigentümer-Antworten und Handwerker-Beauftragungen.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Durchschnittliche Bearbeitungszeit pro Anfrage messbar reduziert.</p>
+              <p>Vertretungssituationen funktionieren — Kontext liegt im System, nicht bei der kranken Sachbearbeiterin.</p>
+              <p>Eigentümer-Zufriedenheit steigt, weil die Qualität personenunabhängig bleibt.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="07" role="dialog" aria-modal="true" aria-labelledby="case-07-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">07 · Anwaltskanzlei · <span class="einsatz-modal__paket">Contextr System</span></div>
+          <h3 id="case-07-title" class="einsatz-modal__title">Fall-Eröffnung mit konsistenter Vorab-Prüfung</h3>
+          <p class="einsatz-modal__segment">3–10 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Wenn ein Mandant anruft, entscheide ich in fünf Minuten, ob wir den Fall nehmen. Meine Sekretärin weiß nicht, was sie fragen soll, wenn ich nicht da bin. Und jeder Fall braucht am Anfang dieselben drei Dokumente — aber wir schreiben sie jedes Mal neu.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Mandatsannahme ist personengebunden. Interessenkonfliktprüfung passiert oft erst nach dem Erstgespräch. Standarddokumente werden jedes Mal neu erstellt.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext mit Rechtsgebiets-Profilen (Familienrecht, Strafrecht, Zivilrecht, IP).</li>
+              <li>Entscheidungslogik für Mandatsannahme als expliziter Wenn-dann-Block: Streitwertgrenzen, Konfliktchecks, ablehnungspflichtige Konstellationen.</li>
+              <li>Kompaktprofil für die Sekretärin mit klaren Handlungsanweisungen pro Fallkonstellation.</li>
+              <li>Mehrsprachige Ausgabe optional (DE/IT bei Kanzleien mit italienischen Mandanten).</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Sekretariat nimmt Fälle eigenständig auf, inklusive erster Dokumenten-Vorab-Erstellung.</p>
+              <p>Interessenkonflikt-Prüfung vor dem ersten Mandantenkontakt — nicht danach.</p>
+              <p>Vollmachten, Mandatsverträge und Deckungsanfragen sind vorausgefüllt; Anwalt prüft nur noch.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="08" role="dialog" aria-modal="true" aria-labelledby="case-08-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">08 · Tierarztpraxis · <span class="einsatz-modal__paket">Contextr System</span></div>
+          <h3 id="case-08-title" class="einsatz-modal__title">Halter-Kontext jenseits der Patientenakte</h3>
+          <p class="einsatz-modal__segment">4–10 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Unsere Patientenakten sind in der Praxissoftware, aber was der Tierhalter beim letzten Besuch erzählt hat — dass der Hund Probleme mit Lärm hat, dass die Besitzerin pflegende Angehörige ist und keine komplizierten Therapiepläne schafft — das steht nirgends. Die Kollegin macht den Folgetermin und fängt von vorne an.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Medizinische Akten strukturiert. Halter-Kontext (Compliance, Sozialkontext, Kommunikationsvorlieben) nur in Gedächtnissen einzelner Tierärztinnen. Vertretungsqualität schwankt.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext der Praxis: Schwerpunkte, Behandlungsphilosophie, Kommunikationsregeln mit Haltern.</li>
+              <li>Kontext-Layer „Halter-Profil": Compliance-Einschätzung, sprachliche Besonderheiten, emotionale Belastung, finanzielle Rahmen.</li>
+              <li>Custom Agent „Terminvorbereitung" liest Akte plus Halter-Kontext plus letzten Behandlungsverlauf und erzeugt ein Briefing.</li>
+              <li>Starter-Prompts für individualisierte Therapieplan-Erklärungen und Nachsorge-E-Mails.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Folgetermin-Briefing in wenigen Minuten statt durch aufwändige Aktensichtung.</p>
+              <p>Bessere Compliance bei Therapieplänen, weil sie an die Halter-Realität angepasst kommuniziert werden.</p>
+              <p>Vertretungssituationen funktionieren: die neue Kollegin kennt den Halter-Kontext, nicht nur die Akte.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="09" role="dialog" aria-modal="true" aria-labelledby="case-09-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">09 · Gemeinnützige Organisation · <span class="einsatz-modal__paket">Contextr Analyse</span></div>
+          <h3 id="case-09-title" class="einsatz-modal__title">Wissenstransfer bei Personal- und Ehrenamtswechsel</h3>
+          <p class="einsatz-modal__segment">3–10 Hauptamtliche + Ehrenamt</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Unsere Ehrenamtlichen sind das Herz der Organisation. Aber wenn eine Person aussteigt, geht ihr Wissen mit. Beim letzten Vorstandswechsel haben wir drei Monate gebraucht, bis der Neue wusste, wer unsere Schlüssel-Spender sind und warum wir mit Partner X nicht mehr zusammenarbeiten.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>NGO-Struktur mit hoher Ehrenamts-Fluktuation und Vorstandswechseln. Stakeholder-Beziehungen, Partnerhistorie und Einsatzlogik nicht dokumentiert. Schlanke IT-Landschaft, keine Notion-Business-Umgebung.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext mit Fokus auf Stakeholder-Landkarte: Spender, Partner, Behörden, Medien.</li>
+              <li>Entscheidungshistorie: warum wurden zentrale Weichenstellungen so getroffen, nicht anders.</li>
+              <li>Ehrenamts-Einarbeitungs-Prompts für typische Rollen.</li>
+              <li>Bewusst schmal gehalten, damit das System auch ohne komplexe Tool-Stacks funktioniert.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Einarbeitung neuer Ehrenamtlicher verkürzt sich deutlich bis zur Einsatzfähigkeit.</p>
+              <p>Vorstandswechsel werden dokumentierbar — wichtige Kontinuitätsanforderung im gemeinnützigen Sektor.</p>
+              <p>Fördermittelanträge werden schneller erstellt, weil Organisationskontext abrufbar ist.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="10" role="dialog" aria-modal="true" aria-labelledby="case-10-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">10 · Handwerksbetrieb · <span class="einsatz-modal__paket">Contextr Analyse</span></div>
+          <h3 id="case-10-title" class="einsatz-modal__title">Kalkulationslogik für die nächste Generation</h3>
+          <p class="einsatz-modal__segment">5–15 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Jedes Angebot dauert einen Abend. Ich gehe durch die Aufmaße, erinnere mich, was der letzte ähnliche Auftrag gekostet hat, und rechne Zuschläge dazu. Mein Sohn soll den Betrieb mal übernehmen — der sieht nur die Zahlen, aber nicht, warum ich bei manchen Kunden 10% drauflege und bei anderen runtergehe.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Kalkulationslogik als Erfahrungswissen des Inhabers. Generationsübergang steht an oder ist absehbar. Kein Notion Business, schlanke IT-Landschaft, preissensitives Segment.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext: Gewerk-Profil, typische Auftragsarten, Kundensegmente (Privat, Gewerbe, Wohnungsbau).</li>
+              <li>Kalkulationslogik expliziert: Materialzuschläge, Lohnfaktoren, Risikozuschläge je Auftragstyp — inklusive der Erfahrungsregeln.</li>
+              <li>Starter-Prompts für Angebotsentwürfe aus Aufmaß-Stichpunkten und Nachtragskalkulationen.</li>
+              <li>Bewusst schlanker Einstieg mit Ausbaupfad: das Analyse-Paket kann später systematisch erweitert werden.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Angebotsdauer deutlich reduziert.</p>
+              <p>Kalkulationslogik erstmals für Nachfolger dokumentiert — relevant bei Generationsübergang.</p>
+              <p>Junior-Kalkulation wird nachvollziehbar: Chef prüft Ergebnis und korrigiert gezielt statt alles neu zu rechnen.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="11" role="dialog" aria-modal="true" aria-labelledby="case-11-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">11 · Patentanwaltskanzlei · <span class="einsatz-modal__paket">Contextr Pro</span></div>
+          <h3 id="case-11-title" class="einsatz-modal__title">Recherche-Standardisierung und Fristen-Kontrollsystem</h3>
+          <p class="einsatz-modal__segment">3–8 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Patentrecherchen sind 60% der Arbeit, aber jede Anwältin sucht anders. Und Fristen — Prioritätsjahr, PCT-Eintritt, Jahresgebühren — sind verteilt auf drei Systeme. Ein Fehler dort kostet den Mandanten das Patent.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Recherche-Qualität schwankt mit der bearbeitenden Person. Fristen liegen verteilt in Docket, E-Mail und Kalender. Haftungsrisiko konzentriert sich auf Einzelpersonen.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Vollständiger Organisationskontext plus alle Kernprozesse AI-ready.</li>
+              <li>Recherche-Standards expliziert: Datenbanken, Suchlogik, Bewertungskriterien für Neuheit und erfinderische Tätigkeit.</li>
+              <li>Fristen-System als Kernprozess „Prioritätsjahr-Management" mit Ladematrix für EP, PCT und national.</li>
+              <li>Custom Agents für Mandanten-Reporting, differenziert nach Branchen-Schwerpunkt.</li>
+              <li>Wartungskonzept: Rechtsprechungsänderungen werden in System-Prompts nachgezogen.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Recherche-Qualität wird personenunabhängig vergleichbar — wichtig bei Haftungsfragen.</p>
+              <p>Fristenkontrolle läuft doppelt: bestehendes Docket plus AI-gestützter Abgleich.</p>
+              <p>Einarbeitung neuer Anwältinnen in Kanzlei-Standards von Monaten auf Wochen.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="einsatz-modal" data-case-modal="12" role="dialog" aria-modal="true" aria-labelledby="case-12-title" hidden>
+        <div class="einsatz-modal__backdrop" data-modal-close></div>
+        <div class="einsatz-modal__content">
+          <button type="button" class="einsatz-modal__close" data-modal-close aria-label="Schließen">✕</button>
+          <div class="einsatz-modal__meta">12 · Sachverständigenbüro · <span class="einsatz-modal__paket">Contextr System</span></div>
+          <h3 id="case-12-title" class="einsatz-modal__title">Gutachten-Bausteinbibliothek mit Qualitäts-Learnings</h3>
+          <p class="einsatz-modal__segment">1–8 Mitarbeiter</p>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// So beschreiben es Betroffene</h4>
+            <p class="einsatz-modal__quote">Ein Gutachten besteht aus 60% Standardbausteinen und 40% Einzelfall. Die Bausteine schreibe ich seit 15 Jahren neu, weil ich sie jedes Mal in einem anderen Gutachten suche. Und wenn ein Gericht mich ablehnt, weil etwas fehlt, lerne ich das für nächstes Mal — aber diese Learnings stehen in meinem Kopf, nicht im Büro.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ausgangslage</h4>
+            <p>Wiederkehrende Gutachtenbausteine werden jedes Mal neu geschrieben. Qualitäts-Learnings aus gerichtlichen Verfahren bleiben als Kopfwissen. Nachfolge- oder Teamaufbau dadurch erschwert.</p>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Was <span class="wortmarke">contextr</span> einrichtet</h4>
+            <ul class="einsatz-modal__list">
+              <li>Organisationskontext: Fachgebiet, übliche Auftraggeber (Gericht, Versicherung, Privat), Methodenstandards.</li>
+              <li>Bausteinbibliothek als strukturierter Kontext-Layer: Rechtsgrundlagen-Zitate, Methodenbeschreibungen, Anhänge-Templates — versioniert.</li>
+              <li>Qualitäts-Learnings als eigener Layer: was bei welchem Verfahren gefehlt hat, kommt als Meta-Wissen ins System zurück.</li>
+              <li>Custom Agent „Gutachten-Skelett": Input Auftragsfakten, Output Bausteinauswahl plus markierte Stellen für Einzelfall-Ausarbeitung.</li>
+            </ul>
+          </section>
+          <section class="einsatz-modal__section">
+            <h4 class="einsatz-modal__h4">// Ergebnis im Alltag</h4>
+            <div class="einsatz-modal__result">
+              <p>Zeit für Standardbausteine sinkt deutlich — mehr Kapazität für den Einzelfall.</p>
+              <p>Qualitäts-Learnings werden strukturell aufgebaut statt an Einzelpersonen gebunden.</p>
+              <p>Nachwuchs-Sachverständige oder Familienbetrieb-Nachfolger haben schnelleren Einstieg.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- S4b: Arbeitsweise -->
   <section id="arbeitsweise">
     <div class="container">
